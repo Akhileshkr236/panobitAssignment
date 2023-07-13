@@ -1,0 +1,17 @@
+.usersCard{
+    max-width: 600px;
+    width: 100%;
+}
+
+.usersBox{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.maxCardHeight{
+    max-height: 60vh;
+    overflow: hidden;
+    overflow-y: auto;
+}
