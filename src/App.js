@@ -1,12 +1,15 @@
 import { RouterProvider } from "react-router-dom";
 import "./assets/theme/scss/master.scss";
 import { router } from "./routes";
+import UserProvider from "./contexts/UsersContext";
 
 function App() {
   return (
-    <div className="App">
-      <RouterProvider router={router} />
-    </div>
+    <UserProvider>
+      <div className="App">
+        <RouterProvider router={router} />
+      </div>
+    </UserProvider>
   );
 }
 

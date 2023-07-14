@@ -3,11 +3,13 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import UserProfileHeader from "../../components/user-profile-header";
 import Chatbox from "../../components/chat-box";
+import { useUsers } from "../../contexts/UsersContext";
+import GeoMap from "../../components/GeoMap.js";
 
 const Profile = () => {
   const params = useParams();
 
-  console.log(params);
+  // console.log(params);
   const [singleUser, setSingleUser] = useState([]);
   useEffect(() => {
     getUserData();
@@ -30,10 +32,22 @@ const Profile = () => {
       });
   };
 
+  const users = useUsers();
+  const single = users.find((user) => {
+    return user.id === parseInt(params.userId);
+  });
+
+  console.log(users, single);
+
   return (
     <>
-      <UserProfileHeader userDetail={singleUser} />
-
+      <UserProfileHeader userDetail={single} />
+      {single && (
+        <GeoMap
+          lat={parseFloat(single?.address?.geo?.lat)}
+          lng={parseFloat(single?.address?.geo?.lng)}
+        />
+      )}
       <Chatbox />
     </>
   );
