@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import UserProfileHeader from "../../components/user-profile-header";
+import Chatbox from "../../components/chat-box";
 
 const Profile = () => {
   const router = useLocation();
@@ -33,6 +34,8 @@ const Profile = () => {
   return (
     <>
       <UserProfileHeader userDetail={singleUser} />
+
+      <Chatbox />
     </>
   );
 };
