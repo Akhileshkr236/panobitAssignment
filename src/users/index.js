@@ -1,15 +1,14 @@
 import React from "react";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
-import style from "./users.module.css";
 
 const Users = () => {
   const navigation = useLocation();
 
   return (
     <>
-      <div className={style.userDetail}>
-        <div className={style.userDetailLeft}>
-          <ul>
+      <div className="user-details-box">
+        <div className="user-details-left">
+          <ul className="user-details-menu">
             <li>
               <NavLink
                 to={"/users/" + navigation.pathname.split("/")[2] + "/profile"}
@@ -40,7 +39,7 @@ const Users = () => {
             </li>
           </ul>
         </div>
-        <div className={style.userDetailRight}>
+        <div className="user-details-right">
           <Outlet />
         </div>
       </div>

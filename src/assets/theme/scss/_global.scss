@@ -1,0 +1,71 @@
+* {
+    scroll-behavior: smooth;
+}
+
+.App {
+    min-height: 100vh;
+    width: 100%;
+}
+
+.custom-scrollbar {
+    .simplebar-scrollbar {
+        &:before {
+            background-color: $white-01;
+        }
+    }
+}
+
+.profile-dropdown {
+    &.dropdown {
+        .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            padding-right: 0;
+
+
+            &::after {
+                content: none;
+            }
+
+            img {
+                width: 40px;
+                height: 40px;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+
+            p {
+                font-size: $font-size-lg;
+                margin: 0 0 0 16px;
+                color: $gray-03;
+                font-weight: 400;
+            }
+        }
+
+        .dropdown-menu {
+            width: 300px;
+            border-radius: 24px;
+            border: none;
+            box-shadow: 0 7px 50px 7px rgba($black-01, 0.1);
+            text-align: center;
+            padding: 40px 28px;
+
+            img {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                margin-bottom: 20px;
+            }
+
+        }
+    }
+}
+
+.btn-danger {
+    background-color: $danger;
+}
+
+.radius-100 {
+    border-radius: 100px;
+}

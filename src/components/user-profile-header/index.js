@@ -6,10 +6,10 @@ const UserProfileHeader = ({ userDetail }) => {
   console.log(userDetail);
   return (
     <>
-      <div>
-        <h2>Profile</h2>
+      <div className="user-profile-header">
+        <h3>Profile</h3>
         <div>
-          <Dropdown>
+          <Dropdown className="profile-dropdown">
             <Dropdown.Toggle variant="link" id="dropdown-basic">
               <img
                 src={userDetail.profilepicture}
@@ -26,10 +26,12 @@ const UserProfileHeader = ({ userDetail }) => {
                   style={{ maxWidth: "100px" }}
                   alt="..."
                 />
-                <p>{userDetail.name}</p>
-                <p>{userDetail.email}</p>
+                <p className="name">{userDetail.name}</p>
+                <p className="email">{userDetail.email}</p>
               </div>
-              <Link to="/users">SignOut</Link>
+              <Link to="/users" className="btn btn-danger radius-100">
+                Sign Out
+              </Link>
             </Dropdown.Menu>
           </Dropdown>
         </div>

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import style from "./home.module.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import {Icons} from "../utils/icons";
+import { Icons } from "../utils/icons";
+import SimpleBar from "simplebar-react";
 
 const Home = () => {
   const [users, setUsers] = useState([]);
@@ -25,33 +25,37 @@ const Home = () => {
       });
   };
 
-
   return (
     <>
-      <div className={style.usersBox}>
-        <img src={Icons.gradientBg} alt={'...'}/>
-        <div className={`card ${style.usersCard}`}>
+      <div className="users-box">
+        <img src={Icons.gradientBg} className="gradient-bg" alt={"..."} />
+        <div className="card users-card">
           <div className="card-header">
             <h3>Select an account</h3>
           </div>
           <div className="card-body">
             {users.length > 0 ? (
-              <ul
-                className={`list-group list-group-flush ${style.maxCardHeight}`}
+              <SimpleBar
+                forceVisible="y"
+                autoHide={false}
+                className="custom-scrollbar"
+                style={{ maxHeight: "55vh" }}
               >
-                {users.map((item) => (
-                  <li key={item.id} className="list-group-item">
-                    <Link to={"/users/" + item.id + "/profile"}>
-                      <img
-                        src={item.profilepicture}
-                        style={{ width: "30px", height: "30px" }}
-                        alt="..."
-                      />
-                      <p>{item.name}</p>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+                <ul className="list-group list-group-flush user-list">
+                  {users.map((item) => (
+                    <li key={item.id} className="list-group-item">
+                      <Link to={"/users/" + item.id + "/profile"} className="">
+                        <img
+                          src={item.profilepicture}
+                          style={{ width: "40px", height: "40px" }}
+                          alt="..."
+                        />
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </SimpleBar>
             ) : (
               "Nothing here"
             )}
