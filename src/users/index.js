@@ -1,8 +1,8 @@
 import React from "react";
-import { NavLink, Outlet, useLocation } from "react-router-dom";
+import { NavLink, Outlet, useParams } from "react-router-dom";
 
 const Users = () => {
-  const navigation = useLocation();
+  const params = useParams();
 
   return (
     <>
@@ -10,32 +10,20 @@ const Users = () => {
         <div className="user-details-left">
           <ul className="user-details-menu">
             <li>
-              <NavLink
-                to={"/users/" + navigation.pathname.split("/")[2] + "/profile"}
-              >
+              <NavLink to={"/users/" + params.userId + "/profile"}>
                 Profile
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to={"/users/" + navigation.pathname.split("/")[2] + "/posts"}
-              >
-                Posts
-              </NavLink>
+              <NavLink to={"/users/" + params.userId + "/posts"}>Posts</NavLink>
             </li>
             <li>
-              <NavLink
-                to={"/users/" + navigation.pathname.split("/")[2] + "/gallery"}
-              >
+              <NavLink to={"/users/" + params.userId + "/gallery"}>
                 Gallery
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to={"/users/" + navigation.pathname.split("/")[2] + "/todo"}
-              >
-                ToDo
-              </NavLink>
+              <NavLink to={"/users/" + params.userId + "/todo"}>ToDo</NavLink>
             </li>
           </ul>
         </div>

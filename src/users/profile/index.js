@@ -1,12 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import UserProfileHeader from "../../components/user-profile-header";
 import Chatbox from "../../components/chat-box";
 
 const Profile = () => {
-  const router = useLocation();
+  const params = useParams();
 
+  console.log(params);
   const [singleUser, setSingleUser] = useState([]);
   useEffect(() => {
     getUserData();
@@ -17,11 +18,9 @@ const Profile = () => {
     await axios
       .get(process.env.REACT_APP_BASE_URL + "users.json")
       .then(function (response) {
-        let allUsers = response.data.users;
-        let splitedArr = router.pathname.split("/");
-        const newUser = allUsers.filter((item) => {
+        const newUser = response.data.users.filter((item) => {
           // eslint-disable-next-line eqeqeq
-          return item.id == splitedArr[2];
+          return item.id == params.userId;
         });
         setSingleUser(newUser[0]);
       })
