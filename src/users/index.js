@@ -12,8 +12,6 @@ const Users = () => {
     return user.id === parseInt(params.userId);
   });
 
-  console.log(users, single);
-
   return (
     <>
       <div className="user-details-box">

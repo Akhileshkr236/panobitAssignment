@@ -4,7 +4,6 @@ import GoogleMapReact from "google-map-react";
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 export default function GeoMap(props) {
-  console.log(props.userDetail?.address?.geo?.lat);
   const defaultProps = {
     center: {
       lat: props.lat,
@@ -14,7 +13,6 @@ export default function GeoMap(props) {
   };
 
   return (
-    // Important! Always set the container height explicitly
     <div
       style={{
         height: "400px",

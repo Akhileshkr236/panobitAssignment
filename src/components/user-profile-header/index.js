@@ -4,8 +4,6 @@ import { Link, useLocation } from "react-router-dom";
 import { useUsers } from "../../contexts/UsersContext";
 
 const UserProfileHeader = ({ userDetail }) => {
-  console.log(userDetail);
-
   const users = useUsers();
   const router = useLocation();
 
