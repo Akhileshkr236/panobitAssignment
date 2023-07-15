@@ -2,7 +2,7 @@
 
 ## Requirements to run the code
 
-Nodejs should be install in the system [Nodejs](https://nodejs.org/en).
+Nodejs should be installed in your system [Nodejs](https://nodejs.org/en).
 
 In the project directory, you can run:
 
