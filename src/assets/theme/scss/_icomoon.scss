@@ -26,6 +26,10 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-header-active:before {
+    content: "\e907";
+}
+
 .icon-chevron-left:before {
     content: "\e900";
 }

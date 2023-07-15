@@ -30,7 +30,7 @@
         padding-left: 0;
 
         li {
-            padding: 16px;
+            padding: 16px 8px 16px;
             border-bottom: 1px solid $purple-01;
             padding-left: 0;
             position: relative;
@@ -40,6 +40,7 @@
             }
 
             a {
+                display: block;
                 text-decoration: none;
                 color: $purple-01;
                 font-size: $font-size-lg;
@@ -49,7 +50,7 @@
                     color: $white;
 
                     &::before {
-                        content: "\e909";
+                        content: "\e907";
                         position: absolute;
                         right: -68px;
                         font-family: "icomoon";
@@ -59,7 +60,7 @@
                     }
 
                     &::after {
-                        content: "\e905";
+                        content: "\e906";
                         position: absolute;
                         right: -35px;
                         font-family: "icomoon";
