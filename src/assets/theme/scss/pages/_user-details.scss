@@ -6,7 +6,10 @@
 
     .user-details-left {
         width: 250px;
-        min-height: 100%;
+        position: fixed;
+        top: 45px;
+        left: 45px;
+        height: calc(100vh - 90px);
         background: linear-gradient(0deg, #6039C8 1%, #385BC8 100%);
         display: flex;
         align-items: center;
@@ -18,6 +21,7 @@
     .user-details-right {
         width: calc(100% - 250px);
         padding-left: 50px;
+        margin-left: 250px;
     }
 
     .user-details-menu {
@@ -29,6 +33,7 @@
             padding: 16px;
             border-bottom: 1px solid $purple-01;
             padding-left: 0;
+            position: relative;
 
             &:last-child {
                 border-bottom: none;
@@ -44,8 +49,24 @@
                     color: $white;
 
                     &::before {
+                        content: "\e909";
                         position: absolute;
-                        right: 0;
+                        right: -68px;
+                        font-family: "icomoon";
+                        top: 50%;
+                        transform: translateY(-50%);
+                        font-size: 74px;
+                    }
+
+                    &::after {
+                        content: "\e905";
+                        position: absolute;
+                        right: -35px;
+                        font-family: "icomoon";
+                        top: calc(50% + 1px);
+                        transform: translateY(-50%);
+                        font-size: 15px;
+                        color: $gray-06;
                     }
                 }
             }

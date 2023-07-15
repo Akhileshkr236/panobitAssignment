@@ -69,3 +69,257 @@
 .radius-100 {
     border-radius: 100px;
 }
+
+.seperator {
+    background-color: $gray-04;
+    height: 1px;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto 20px;
+}
+
+.chat-msg-box {
+    position: fixed;
+    bottom: 0;
+    right: 50px;
+    width: 280px;
+    border: 1px solid $blue-01;
+    border-radius: 14px 14px 0 0;
+    z-index: 1050;
+    background-color: $white;
+
+    &.chatting-msg-box {
+        right: 360px;
+
+        .chat-menu-toggle {
+            font-size: $font-size-base;
+
+            .profile-icon {
+                width: 24px;
+                height: 24px;
+                object-fit: cover;
+                border-radius: 50%;
+                position: absolute;
+                left: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            .close-icon {
+                right: 42px;
+            }
+
+            .icon-btn {
+                position: absolute;
+                right: 12px;
+                color: $white;
+                font-size: $font-size-md;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        .msg-chat {
+            padding: 14px 24px;
+
+            &.recieved {
+                p {
+                    &:first-child {
+                        position: relative;
+                        border-radius: 0 6px 6px 6px;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            left: -12px;
+                            top: 0;
+                            border-left: 12px solid transparent;
+                            border-right: 1px solid transparent;
+                            border-top: 12px solid $white-03;
+                        }
+                    }
+                }
+            }
+
+            &.send {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+
+                p {
+                    &:first-child {
+                        position: relative;
+                        border-radius: 6px 0px 6px 6px;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            right: -12px;
+                            top: 0;
+                            border-left: 1px solid transparent;
+                            border-right: 12px solid transparent;
+                            border-top: 12px solid $white-03;
+                        }
+                    }
+                }
+            }
+
+            p {
+                font-size: $font-size-base;
+                margin-bottom: 8px;
+                background: $white-03;
+                padding: 4px 8px;
+                display: inline-block;
+                max-width: 80%;
+                border-radius: 6px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+            }
+        }
+
+        .timestamp {
+            text-align: center;
+            font-size: $font-size-12;
+
+            span {}
+        }
+
+        .input-msg-box {
+            position: sticky;
+            bottom: 0;
+            width: 100%;
+            left: 0;
+            margin-left: -1px;
+
+            input {
+                width: calc(100% + 6px);
+                height: 40px;
+                padding-left: 10px;
+                padding-right: 36px;
+                border-radius: 0;
+                border: 1px solid $gray-04;
+                border-bottom: none;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            .icon-btn {
+                color: $blue-01;
+                position: absolute;
+                z-index: 1;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    .chat-menu-toggle {
+        display: inline-block;
+        border-radius: 12px 12px 0 0;
+        background-color: $blue-01;
+        color: $white;
+        padding: 16px 48px 16px 50px;
+        width: 100%;
+        text-align: left;
+        position: relative;
+        font-size: $font-size-lg;
+        line-height: 1;
+        border: none;
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            background-color: $blue-01;
+            color: $white;
+        }
+    }
+
+    .close-icon,
+    .msg-icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $white;
+    }
+
+    p {
+        font-size: $font-size-sm;
+    }
+
+    .msg-icon {
+        left: 20px;
+        font-size: $font-size-22;
+    }
+
+    .close-icon {
+        right: 14px;
+        font-size: $font-size-md;
+    }
+
+    .chat-menu-content {
+        padding-right: 4px;
+    }
+
+    .chat-list {
+        list-style: none;
+        padding-left: 0;
+
+        li {
+            padding: 6px 24px 6px 16px;
+        }
+    }
+
+    .chat-list-item {
+        position: relative;
+        padding-left: 36px;
+        padding-right: 16px;
+        width: 100%;
+        display: inline-block;
+        text-decoration: none;
+        color: $gray-01;
+        min-height: 32px;
+        display: flex;
+        align-items: center;
+
+        &:before {
+            content: '';
+            position: absolute;
+            right: 4px;
+            top: 50%;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: green;
+            transform: translateY(-50%);
+        }
+
+        p {
+            margin: 0;
+            font-size: $font-size-md;
+        }
+
+        img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+.icon-btn {
+    padding: 4px;
+    line-height: 1;
+    font-size: $font-size-20;
+}
