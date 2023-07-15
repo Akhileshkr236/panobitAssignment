@@ -1,8 +1,18 @@
 import React from "react";
 import { NavLink, Outlet, useParams } from "react-router-dom";
+import UserProfileHeader from "../components/user-profile-header";
+import { useUsers } from "../contexts/UsersContext";
+import Chatbox from "../components/chat-box";
 
 const Users = () => {
   const params = useParams();
+
+  const users = useUsers();
+  const single = users.find((user) => {
+    return user.id === parseInt(params.userId);
+  });
+
+  console.log(users, single);
 
   return (
     <>
@@ -28,8 +38,11 @@ const Users = () => {
           </ul>
         </div>
         <div className="user-details-right">
+          <UserProfileHeader userDetail={single} />
           <Outlet />
         </div>
+
+        <Chatbox />
       </div>
     </>
   );

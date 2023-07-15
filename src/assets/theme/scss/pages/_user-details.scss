@@ -24,6 +24,30 @@
         margin-left: 250px;
     }
 
+    .has-icon-left {
+        position: relative;
+        display: inline-block;
+        padding: 4px 0 4px 40px;
+
+        img {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px !important;
+            height: 30px !important;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 !important;
+        }
+
+        p {
+            margin: 0;
+            font-size: $font-size-md;
+        }
+
+    }
+
     .user-details-menu {
         width: 100%;
         list-style: none;
