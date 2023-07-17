@@ -8,9 +8,13 @@ Please verify your node and npm version should be
 NPM version: 8.15.0
 Node Version: v16.17.1
 
+Always good to do
+rm -rf node_modules && npm install
+
+
 In the project directory, you can run:
 
-### `npm i`
+### `npm install`
 
 It will install all the required libraries and dependencies.
 
