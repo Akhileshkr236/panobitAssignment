@@ -4,6 +4,10 @@
 
 Nodejs should be installed in your system [Nodejs](https://nodejs.org/en).
 
+Please verify your node and npm version should be 
+NPM version: 8.15.0
+Node Version: v16.17.1
+
 In the project directory, you can run:
 
 ### `npm i`
